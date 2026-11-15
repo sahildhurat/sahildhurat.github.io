@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why first-year SIPs stop — Sahil Dhurat</title>
+<meta name="description" content="Discovery research on 1.6M public posts about SIPs, eight investor interviews, and SIP Passbook, a concept MVP for Groww's first-time investors.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F4F6F9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E182C" media="(prefers-color-scheme: dark)">
+<link rel="preload" href="../assets/fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/dm-sans-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="../">Sahil Dhurat</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="../#work" aria-current="page">Work</a>
+      <a href="../#projects">Projects</a>
+      <a href="../#case-studies">Case studies</a>
+      <a href="../#about">About</a>
+      <a class="nav-resume" href="https://drive.google.com/file/d/16mVuV6dT9pFEHMeCt_t-MgY8AIMUmg17/view?usp=sharing">Resume</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="case-hero" aria-labelledby="case-title">
+  <div class="wrap">
+    <div>
+      <p class="crumbs"><a href="../#work">Work</a> / Groww</p>
+      <h1 id="case-title">Why first-year SIPs stop, and a passbook built to keep them going</h1>
+      <p class="lede">Groww's first-time mutual fund investors are most likely to stop a SIP in their first few months. I built a discovery engine to find out why from 1.6 million public posts, interviewed eight investors, and designed a concept that goes after the real cause.</p>
+      <dl class="meta">
+        <dt>My role</dt><dd>Everything: research design, analysis, product spec and the MVP</dd>
+        <dt>Built with</dt><dd>Claude and Google Antigravity, with every AI step evaluated</dd>
+        <dt>Links</dt>
+        <dd>
+          <ul class="linkrow">
+            <li class="primary-link"><a href="https://sippassbook.vercel.app/">Try the MVP</a></li>
+            <li><a href="https://site-bice-three-88.vercel.app/">Discovery dashboard</a></li>
+            <li><a href="https://site-bice-three-88.vercel.app/videos/passbook-demo.mp4">Demo video</a></li>
+            <li><a href="https://github.com/sahildhurat/groww-engine">Code</a></li>
+          </ul>
+        </dd>
+      </dl>
+    </div>
+    <figure style="margin:0">
+      <div class="phone"><img src="../assets/img/sip-passbook.png" width="390" height="780" alt="SIP Passbook screen showing an active SIP of ₹2,000 a month, 158.513 units allotted from eight confirmed instalments, and the latest instalment debited with units not confirmed yet."></div>
+      <figcaption class="phone-cap">SIP Passbook, with synthetic demo data</figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="tldr">
+    <h2>In short</h2>
+    <ul>
+      <li>Losses make first-year investors think about stopping. Mechanics make them actually stop: payment lapses appear in 35% of stop stories and app friction in 30%, against 21% for disappointing returns.</li>
+      <li>It happens early. Of first-time investors who say when they stopped, 49% did so within three months.</li>
+      <li>SIP Passbook shows each instalment moving from bank to fund to units, so "where is my money" has an answer before it becomes a reason to quit.</li>
+    </ul>
+  </div>
+
+  <section class="chapter" aria-labelledby="c1">
+    <h2 id="c1">The question</h2>
+    <div class="prose">
+      <p>Plenty of people start a SIP, and many of them stop within the first year. I wanted to know what separates the investors who keep going from the ones who stop, and which of those reasons a product can actually fix.</p>
+      <p>The measure I worked towards: the share of first-year SIPs still active, or easy to restart, at month 12.</p>
+    </div>
+  </section>
+
+  <section class="chapter" aria-labelledby="c2">
+    <h2 id="c2">How I found out</h2>
+    <div class="prose">
+      <p>A handful of anecdotes can support any story, so I built a discovery engine that reads what investors say in public: Reddit, YouTube comments, Play Store and App Store reviews, TradingQ&amp;A and X. Every stage keeps its count, so nothing is dropped quietly.</p>
+      <figure class="ladder case-ladder">
+        <figcaption>Each step narrows the data to stories that answer the question (bar length on a log scale)</figcaption>
+        <ol>
+          <li style="--w:100%"><span class="bar"></span><span class="row"><span>Public records collected, usernames removed</span><span class="n">1,631,157</span></span></li>
+          <li style="--w:86%"><span class="bar"></span><span class="row"><span>Checked for relevance by AI</span><span class="n">232,395</span></span></li>
+          <li style="--w:80%"><span class="bar"></span><span class="row"><span>Episodes analysed</span><span class="n">90,755</span></span></li>
+          <li style="--w:73%"><span class="bar"></span><span class="row"><span>First-year investor episodes</span><span class="n">32,868</span></span></li>
+          <li style="--w:46%"><span class="bar"></span><span class="row"><span>Confirmed first-year stop stories</span><span class="n">684</span></span></li>
+        </ol>
+      </figure>
+      <p>An AI model first judged whether each post was relevant, then pulled structured facts from each story, every fact tied to the exact words it came from. A second, date-aware read confirmed that someone had actually stopped before they were counted as a stopper, which makes those counts a floor, not an estimate.</p>
+      <p>I checked the model against a stronger model on 300 items and against my own labels. Where agreement stayed low, as it did for open-ended "unmet need" themes, those themes are treated as colour, not evidence.</p>
+    </div>
+  </section>
+
+  <section class="chapter" aria-labelledby="c3">
+    <h2 id="c3">What the evidence says</h2>
+    <div class="prose">
+      <h3>Losses start the doubt. Mechanics end the SIP.</h3>
+      <p>Among first-year investors thinking about stopping, 55% describe negative returns. But among those who actually stopped, the most common routes are payment problems and app friction. Continuers see losses too: 21% of them mention negative returns, the same share as stoppers.</p>
+      <div class="table-scroll">
+        <table class="datatable">
+          <caption>Routes to a stop in first-year stop stories (a story can have more than one)</caption>
+          <thead>
+            <tr><th scope="col">Route</th><th scope="col" class="num">All sources</th><th scope="col" class="num">Reddit</th><th scope="col" class="num">YouTube</th><th scope="col" class="num">App reviews</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Payment lapse (failed or missed debit, mandate)</td><td class="num">35%</td><td class="num">17%</td><td class="num">41%</td><td class="num">80%</td></tr>
+            <tr><td>App friction (bugs, confusion, trust)</td><td class="num">30%</td><td class="num">20%</td><td class="num">26%</td><td class="num">60%</td></tr>
+            <tr><td>Disappointing returns</td><td class="num">21%</td><td class="num">28%</td><td class="num">6%</td><td class="num">9%</td></tr>
+            <tr><td>Cash flow (crunch, income change)</td><td class="num">9%</td><td class="num">11%</td><td class="num">10%</td><td class="num">2%</td></tr>
+            <tr><th scope="row">Stories</th><td class="num">684</td><td class="num">435</td><td class="num">88</td><td class="num">149</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>It happens early</h3>
+      <p>49% of first-time stoppers who say when they stopped did so within three months, and 25% in months 7 to 12. The first months mix set-up problems, like a failed first debit or confusion in the app, with early losses. From month four, seeing losses or flat returns dominates.</p>
+      <h3>Unanswered support is a warning sign</h3>
+      <p>Of first-year stoppers who describe what they tried in the app before stopping, 40% had contacted support without getting a resolution.</p>
+      <h3>Flexibility exists but isn't used</h3>
+      <p>Continuers hold a long-term view (71% of their reasons). Almost nobody describes pausing or reducing a SIP instead of stopping it, even though apps offer both.</p>
+    </div>
+  </section>
+
+  <section class="chapter" aria-labelledby="c4">
+    <h2 id="c4">Where a product can help</h2>
+    <div class="prose">
+      <p>I compared how often each problem area shows up in stop stories versus continue stories. The two areas that separate them on every source are payments and "where is my money".</p>
+      <div class="table-scroll">
+        <table class="datatable">
+          <caption>Share of first-year stop and continue stories mentioning each area, all sources</caption>
+          <thead>
+            <tr><th scope="col">Area</th><th scope="col" class="num">Stop stories</th><th scope="col" class="num">Continue stories</th><th scope="col">Holds on</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Payment and AutoPay problems</td><td class="num">34.6%</td><td class="num">5.9%</td><td>Reddit, YouTube, app reviews</td></tr>
+            <tr><td>"Where is my money" and unresolved support</td><td class="num">32.3%</td><td class="num">2.9%</td><td>Reddit, YouTube, app reviews</td></tr>
+            <tr><td>Control of the SIP (skip, pause, edit, cancel)</td><td class="num">12.4%</td><td class="num">1.6%</td><td>Reddit, YouTube</td></tr>
+            <tr><td>Cash-flow shocks</td><td class="num">9.4%</td><td class="num">4.8%</td><td>Reddit, YouTube</td></tr>
+            <tr><td>Returns versus expectations</td><td class="num">30.0%</td><td class="num">25.1%</td><td>Reddit only</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Public posts over-represent loud failures; people who quietly let a SIP lapse rarely post about it. So I interviewed eight first-time investors to test what the data couldn't show.</p>
+      <ul>
+        <li>4 of the 5 who had stopped did so after a life event: a job loss, a job switch, a stipend ending, a family emergency.</li>
+        <li>6 of 8 followed their SIP mainly through bank SMS, which shows money leaving but not what it became.</li>
+        <li>4 of 8 confused their own return with the fund's.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="chapter" aria-labelledby="c5">
+    <h2 id="c5">What I built</h2>
+    <div class="prose">
+      <p class="pullquote">Your bank's SMS shows the money leaving. SIP Passbook shows what it became.</p>
+      <p>UPI moves money in seconds; a SIP takes days. While an instalment is in between, the investor sees a debit SMS and nothing else. SIP Passbook gives each SIP one screen that works like a bank passbook: every instalment shows each step, from bank debit to order placed to units allotted, with its source and the time it was last confirmed.</p>
+      <p>One AI feature, Sensecheck, explains any line in plain words, using only verified facts and approved help content. It declines investment-advice questions with a fixed answer.</p>
+      <h3>The rules I set before building</h3>
+      <ul>
+        <li>No investment advice, predictions or "you should continue" nudges.</li>
+        <li>No fear, urgency, streaks or guilt. Leaving is never made harder, and every option carries equal visual weight.</li>
+        <li>A step that hasn't happened is never shown as done. Missing data says "not confirmed yet", with the time.</li>
+        <li>It's labelled a supplementary view; the consolidated account statement stays the official record.</li>
+      </ul>
+      <h3>Tested before it ships</h3>
+      <p>Sensecheck can only go live by passing an evaluation gate. On 20 hand-labelled questions it gave acceptable answers to 18, meeting the 90% bar, with no critical errors. An optional personal layer, a note to your future self and life markers, can be switched on or off for user tests.</p>
+      <p>The concept started broader, as a "SIP locker" with receipts, memories and a day-one promise, and I cut it back to the passbook.</p>
+    </div>
+  </section>
+
+  <section class="chapter" aria-labelledby="c6">
+    <h2 id="c6">Limits and next steps</h2>
+    <div class="prose">
+      <p>Public data can't size quiet drift, eight interviews are a small sample, and the passbook runs on synthetic data. The next test is whether seeing each instalment's status reduces "where is my money" contacts and stops in the first quarter for real users.</p>
+      <h3>Everything behind this page</h3>
+      <ul class="linkrow" style="flex-direction:column;gap:8px">
+        <li><a href="https://site-bice-three-88.vercel.app/">Discovery dashboard: findings, stories and method</a></li>
+        <li><a href="https://site-bice-three-88.vercel.app/videos/engine-walkthrough.mp4">Engine walkthrough (video)</a></li>
+        <li><a href="https://site-bice-three-88.vercel.app/research/interview-transcripts.pdf">Interview transcripts (PDF)</a></li>
+        <li><a href="https://site-bice-three-88.vercel.app/research/user-test-transcripts.pdf">User-test transcripts (PDF)</a></li>
+        <li><a href="https://github.com/sahildhurat/groww-engine">Discovery engine code</a></li>
+        <li><a href="https://github.com/sahildhurat/groww-again">SIP Passbook code</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <nav class="next-case" aria-label="More work">
+    <div><span>Back to</span><a href="../#work">All work</a></div>
+    <div><span>Next</span><a href="../#projects">Products I've built</a></div>
+  </nav>
+</div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <p class="contact"><a href="mailto:sahil.dhurat@outlook.com">sahil.dhurat@outlook.com</a></p>
+      <p class="disclaimer">Concept work. Not affiliated with Groww. SIP Passbook uses synthetic demo data and is not investment advice.</p>
+    </div>
+    <ul class="linkrow">
+      <li><a href="https://www.linkedin.com/in/sahil-dhurat/">LinkedIn</a></li>
+      <li><a href="https://github.com/sahildhurat">GitHub</a></li>
+      <li><a href="https://nextleap.app/portfolio/sahil-dhurat">NextLeap</a></li>
+      <li><a href="https://drive.google.com/file/d/16mVuV6dT9pFEHMeCt_t-MgY8AIMUmg17/view?usp=sharing">Resume</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>
