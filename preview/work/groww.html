@@ -6,23 +6,23 @@
 <title>Why first-year SIPs stop — Sahil Dhurat</title>
 <meta name="description" content="Discovery research on 1.6M public posts about SIPs, eight investor interviews, and SIP Passbook, a concept MVP for Groww's first-time investors.">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#F4F6F9" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0E182C" media="(prefers-color-scheme: dark)">
-<link rel="preload" href="../assets/fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../assets/fonts/dm-sans-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#F2F3F5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14171F" media="(prefers-color-scheme: dark)">
+<link rel="preload" href="../assets/fonts/bricolage-grotesque-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="site-head">
+<header class="toolbar">
   <div class="wrap">
-    <a class="wordmark" href="../">Sahil Dhurat</a>
+    <a class="mark" href="../"><i aria-hidden="true">S</i>Sahil Dhurat</a>
     <nav class="site-nav" aria-label="Main">
       <a href="../#work" aria-current="page">Work</a>
-      <a href="../#projects">Projects</a>
-      <a href="../#case-studies">Case studies</a>
-      <a href="../#about">About</a>
+      <a class="hide-sm" href="../#projects">Projects</a>
+      <a class="hide-sm" href="../#case-studies">Case studies</a>
+      <a class="hide-sm" href="../#about">About</a>
       <a class="nav-resume" href="https://drive.google.com/file/d/16mVuV6dT9pFEHMeCt_t-MgY8AIMUmg17/view?usp=sharing">Resume</a>
     </nav>
   </div>
@@ -39,16 +39,13 @@
       <dl class="meta">
         <dt>My role</dt><dd>Everything: research design, analysis, product spec and the MVP</dd>
         <dt>Built with</dt><dd>Claude and Google Antigravity, with every AI step evaluated</dd>
-        <dt>Links</dt>
-        <dd>
-          <ul class="linkrow">
-            <li class="primary-link"><a href="https://sippassbook.vercel.app/">Try the MVP</a></li>
-            <li><a href="https://site-bice-three-88.vercel.app/">Discovery dashboard</a></li>
-            <li><a href="https://site-bice-three-88.vercel.app/videos/passbook-demo.mp4">Demo video</a></li>
-            <li><a href="https://github.com/sahildhurat/groww-engine">Code</a></li>
-          </ul>
-        </dd>
       </dl>
+      <ul class="chips">
+        <li class="go"><a href="https://sippassbook.vercel.app/">Try the MVP</a></li>
+        <li><a href="https://site-bice-three-88.vercel.app/">Discovery dashboard</a></li>
+        <li><a href="https://site-bice-three-88.vercel.app/videos/passbook-demo.mp4">Demo video</a></li>
+        <li><a href="https://github.com/sahildhurat/groww-engine">Code</a></li>
+      </ul>
     </div>
     <figure style="margin:0">
       <div class="phone"><img src="../assets/img/sip-passbook.png" width="390" height="780" alt="SIP Passbook screen showing an active SIP of ₹2,000 a month, 158.513 units allotted from eight confirmed instalments, and the latest instalment debited with units not confirmed yet."></div>
@@ -57,17 +54,31 @@
   </div>
 </section>
 
-<div class="wrap">
-  <div class="tldr">
-    <h2>In short</h2>
-    <ul>
-      <li>Losses make first-year investors think about stopping. Mechanics make them actually stop: payment lapses appear in 35% of stop stories and app friction in 30%, against 21% for disappointing returns.</li>
-      <li>It happens early. Of first-time investors who say when they stopped, 49% did so within three months.</li>
-      <li>SIP Passbook shows each instalment moving from bank to fund to units, so "where is my money" has an answer before it becomes a reason to quit.</li>
-    </ul>
-  </div>
+<div class="wrap stack">
 
-  <section class="chapter" aria-labelledby="c1">
+  <section class="frame" aria-labelledby="short-title">
+    <span class="tab" id="short-title">In short</span>
+    <div class="summary">
+      <div class="card">
+        <ul style="margin:0;padding-left:20px">
+          <li style="margin-bottom:8px">Losses make first-year investors think about stopping. Mechanics make them actually stop: payment lapses appear in 35% of stop stories and app friction in 30%, against 21% for disappointing returns.</li>
+          <li style="margin-bottom:8px">It happens early. Of first-time investors who say when they stopped, 49% did so within three months.</li>
+          <li>SIP Passbook shows each instalment moving from bank to fund to units, so "where is my money" has an answer before it becomes a reason to quit.</li>
+        </ul>
+      </div>
+      <div class="sticky s-yellow tilt-r big-note"><span class="k">The insight</span><span class="v">Losses start the doubt. Failed payments end the SIP.</span></div>
+    </div>
+    <h2 style="font:700 15px var(--sans);color:var(--soft);margin:26px 0 10px">What I did</h2>
+    <ul class="tasks">
+      <li><span>Built a discovery engine over 1.6M public posts, with counts kept at every step</span><span class="st">Done</span></li>
+      <li><span>Interviewed eight first-time investors to test what public data can't show</span><span class="st">Done</span></li>
+      <li><span>Wrote the product spec and the rules the MVP must never break</span><span class="st">Done</span></li>
+      <li><span>Built SIP Passbook and ran user tests</span><span class="st">Live</span></li>
+      <li><span>Evaluated the AI explainer: 18 of 20 test questions, no critical errors</span><span class="st">Passed</span></li>
+    </ul>
+  </section>
+
+  <section class="card chapter" aria-labelledby="c1">
     <h2 id="c1">The question</h2>
     <div class="prose">
       <p>Plenty of people start a SIP, and many of them stop within the first year. I wanted to know what separates the investors who keep going from the ones who stop, and which of those reasons a product can actually fix.</p>
@@ -75,18 +86,18 @@
     </div>
   </section>
 
-  <section class="chapter" aria-labelledby="c2">
+  <section class="card chapter" aria-labelledby="c2">
     <h2 id="c2">How I found out</h2>
     <div class="prose">
       <p>A handful of anecdotes can support any story, so I built a discovery engine that reads what investors say in public: Reddit, YouTube comments, Play Store and App Store reviews, TradingQ&amp;A and X. Every stage keeps its count, so nothing is dropped quietly.</p>
-      <figure class="ladder case-ladder">
+      <figure class="funnel big">
         <figcaption>Each step narrows the data to stories that answer the question (bar length on a log scale)</figcaption>
         <ol>
-          <li style="--w:100%"><span class="bar"></span><span class="row"><span>Public records collected, usernames removed</span><span class="n">1,631,157</span></span></li>
-          <li style="--w:86%"><span class="bar"></span><span class="row"><span>Checked for relevance by AI</span><span class="n">232,395</span></span></li>
-          <li style="--w:80%"><span class="bar"></span><span class="row"><span>Episodes analysed</span><span class="n">90,755</span></span></li>
-          <li style="--w:73%"><span class="bar"></span><span class="row"><span>First-year investor episodes</span><span class="n">32,868</span></span></li>
-          <li style="--w:46%"><span class="bar"></span><span class="row"><span>Confirmed first-year stop stories</span><span class="n">684</span></span></li>
+          <li style="--w:100%"><span class="bar"></span><span class="row"><span>Public records collected, usernames removed</span><b>1,631,157</b></span></li>
+          <li style="--w:86%"><span class="bar"></span><span class="row"><span>Checked for relevance by AI</span><b>232,395</b></span></li>
+          <li style="--w:80%"><span class="bar"></span><span class="row"><span>Episodes analysed</span><b>90,755</b></span></li>
+          <li style="--w:73%"><span class="bar"></span><span class="row"><span>First-year investor episodes</span><b>32,868</b></span></li>
+          <li style="--w:46%"><span class="bar"></span><span class="row"><span>Confirmed first-year stop stories</span><b>684</b></span></li>
         </ol>
       </figure>
       <p>An AI model first judged whether each post was relevant, then pulled structured facts from each story, every fact tied to the exact words it came from. A second, date-aware read confirmed that someone had actually stopped before they were counted as a stopper, which makes those counts a floor, not an estimate.</p>
@@ -94,7 +105,7 @@
     </div>
   </section>
 
-  <section class="chapter" aria-labelledby="c3">
+  <section class="card chapter" aria-labelledby="c3">
     <h2 id="c3">What the evidence says</h2>
     <div class="prose">
       <h3>Losses start the doubt. Mechanics end the SIP.</h3>
@@ -102,9 +113,7 @@
       <div class="table-scroll">
         <table class="datatable">
           <caption>Routes to a stop in first-year stop stories (a story can have more than one)</caption>
-          <thead>
-            <tr><th scope="col">Route</th><th scope="col" class="num">All sources</th><th scope="col" class="num">Reddit</th><th scope="col" class="num">YouTube</th><th scope="col" class="num">App reviews</th></tr>
-          </thead>
+          <thead><tr><th scope="col">Route</th><th scope="col" class="num">All sources</th><th scope="col" class="num">Reddit</th><th scope="col" class="num">YouTube</th><th scope="col" class="num">App reviews</th></tr></thead>
           <tbody>
             <tr><td>Payment lapse (failed or missed debit, mandate)</td><td class="num">35%</td><td class="num">17%</td><td class="num">41%</td><td class="num">80%</td></tr>
             <tr><td>App friction (bugs, confusion, trust)</td><td class="num">30%</td><td class="num">20%</td><td class="num">26%</td><td class="num">60%</td></tr>
@@ -123,16 +132,14 @@
     </div>
   </section>
 
-  <section class="chapter" aria-labelledby="c4">
+  <section class="card chapter" aria-labelledby="c4">
     <h2 id="c4">Where a product can help</h2>
     <div class="prose">
       <p>I compared how often each problem area shows up in stop stories versus continue stories. The two areas that separate them on every source are payments and "where is my money".</p>
       <div class="table-scroll">
         <table class="datatable">
           <caption>Share of first-year stop and continue stories mentioning each area, all sources</caption>
-          <thead>
-            <tr><th scope="col">Area</th><th scope="col" class="num">Stop stories</th><th scope="col" class="num">Continue stories</th><th scope="col">Holds on</th></tr>
-          </thead>
+          <thead><tr><th scope="col">Area</th><th scope="col" class="num">Stop stories</th><th scope="col" class="num">Continue stories</th><th scope="col">Holds on</th></tr></thead>
           <tbody>
             <tr><td>Payment and AutoPay problems</td><td class="num">34.6%</td><td class="num">5.9%</td><td>Reddit, YouTube, app reviews</td></tr>
             <tr><td>"Where is my money" and unresolved support</td><td class="num">32.3%</td><td class="num">2.9%</td><td>Reddit, YouTube, app reviews</td></tr>
@@ -151,10 +158,10 @@
     </div>
   </section>
 
-  <section class="chapter" aria-labelledby="c5">
+  <section class="card chapter" aria-labelledby="c5">
     <h2 id="c5">What I built</h2>
     <div class="prose">
-      <p class="pullquote">Your bank's SMS shows the money leaving. SIP Passbook shows what it became.</p>
+      <p class="pull">Your bank's SMS shows the money leaving. SIP Passbook shows what it became.</p>
       <p>UPI moves money in seconds; a SIP takes days. While an instalment is in between, the investor sees a debit SMS and nothing else. SIP Passbook gives each SIP one screen that works like a bank passbook: every instalment shows each step, from bank debit to order placed to units allotted, with its source and the time it was last confirmed.</p>
       <p>One AI feature, Sensecheck, explains any line in plain words, using only verified facts and approved help content. It declines investment-advice questions with a fixed answer.</p>
       <h3>The rules I set before building</h3>
@@ -170,12 +177,12 @@
     </div>
   </section>
 
-  <section class="chapter" aria-labelledby="c6">
+  <section class="card chapter" aria-labelledby="c6">
     <h2 id="c6">Limits and next steps</h2>
     <div class="prose">
       <p>Public data can't size quiet drift, eight interviews are a small sample, and the passbook runs on synthetic data. The next test is whether seeing each instalment's status reduces "where is my money" contacts and stops in the first quarter for real users.</p>
       <h3>Everything behind this page</h3>
-      <ul class="linkrow" style="flex-direction:column;gap:8px">
+      <ul class="links-list">
         <li><a href="https://site-bice-three-88.vercel.app/">Discovery dashboard: findings, stories and method</a></li>
         <li><a href="https://site-bice-three-88.vercel.app/videos/engine-walkthrough.mp4">Engine walkthrough (video)</a></li>
         <li><a href="https://site-bice-three-88.vercel.app/research/interview-transcripts.pdf">Interview transcripts (PDF)</a></li>
@@ -186,12 +193,12 @@
     </div>
   </section>
 
-  <nav class="next-case" aria-label="More work">
+  <nav class="card next" aria-label="More work">
     <div><span>Back to</span><a href="../#work">All work</a></div>
     <div><span>Next</span><a href="../#projects">Products I've built</a></div>
   </nav>
-</div>
 
+</div>
 </main>
 
 <footer class="site-foot">
@@ -200,11 +207,11 @@
       <p class="contact"><a href="mailto:sahil.dhurat@outlook.com">sahil.dhurat@outlook.com</a></p>
       <p class="disclaimer">Concept work. Not affiliated with Groww. SIP Passbook uses synthetic demo data and is not investment advice.</p>
     </div>
-    <ul class="linkrow">
+    <ul class="chips">
       <li><a href="https://www.linkedin.com/in/sahil-dhurat/">LinkedIn</a></li>
       <li><a href="https://github.com/sahildhurat">GitHub</a></li>
       <li><a href="https://nextleap.app/portfolio/sahil-dhurat">NextLeap</a></li>
-      <li><a href="https://drive.google.com/file/d/16mVuV6dT9pFEHMeCt_t-MgY8AIMUmg17/view?usp=sharing">Resume</a></li>
+      <li class="go"><a href="https://drive.google.com/file/d/16mVuV6dT9pFEHMeCt_t-MgY8AIMUmg17/view?usp=sharing">Resume</a></li>
     </ul>
   </div>
 </footer>

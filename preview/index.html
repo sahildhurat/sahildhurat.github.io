@@ -6,23 +6,24 @@
 <title>Sahil Dhurat — Product Manager</title>
 <meta name="description" content="Product manager portfolio: discovery research, live MVPs and case studies by Sahil Dhurat.">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#F4F6F9" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0E182C" media="(prefers-color-scheme: dark)">
-<link rel="preload" href="assets/fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/dm-sans-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#F2F3F5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14171F" media="(prefers-color-scheme: dark)">
+<link rel="preload" href="assets/fonts/bricolage-grotesque-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/patrick-hand-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="site-head">
+<header class="toolbar">
   <div class="wrap">
-    <a class="wordmark" href="./">Sahil Dhurat</a>
+    <a class="mark" href="./"><i aria-hidden="true">S</i>Sahil Dhurat</a>
     <nav class="site-nav" aria-label="Main">
       <a href="#work">Work</a>
-      <a href="#projects">Projects</a>
-      <a href="#case-studies">Case studies</a>
-      <a href="#about">About</a>
+      <a class="hide-sm" href="#projects">Projects</a>
+      <a class="hide-sm" href="#case-studies">Case studies</a>
+      <a class="hide-sm" href="#about">About</a>
       <a class="nav-resume" href="https://drive.google.com/file/d/16mVuV6dT9pFEHMeCt_t-MgY8AIMUmg17/view?usp=sharing">Resume</a>
     </nav>
   </div>
@@ -33,9 +34,10 @@
 <section class="hero" aria-labelledby="hero-title">
   <div class="wrap">
     <div>
+      <p class="badge">Open to APM and PM roles</p>
       <h1 id="hero-title">I find out why users drop off, then build the fix.</h1>
       <p class="lede">I'm a product manager. I owned <strong>auto-loan products at Axis Bank</strong>, and I bring an engineering degree and an MBA in marketing. Now I build end to end: discovery research over large sets of public user data, live MVPs with tested AI, and metric systems for marketplaces.</p>
-      <div class="actions">
+      <div class="btns">
         <a class="btn btn-primary" href="#work">See the work</a>
         <a class="btn" href="https://drive.google.com/file/d/16mVuV6dT9pFEHMeCt_t-MgY8AIMUmg17/view?usp=sharing">Resume (PDF)</a>
         <a class="btn" href="https://www.linkedin.com/in/sahil-dhurat/">LinkedIn</a>
@@ -43,15 +45,17 @@
       </div>
     </div>
 
-    <aside class="record" aria-labelledby="record-title">
-      <p class="record-title" id="record-title"><span>How I work, on one project</span><a href="work/groww.html">Read it</a></p>
-      <ol>
-        <li><span class="step">The question</span><span class="say">Why do first-time investors stop their SIP in the first year?</span></li>
-        <li><span class="step">The evidence</span><span class="say"><span class="fig">1.63M</span> public posts narrowed to <span class="fig">684</span> first-year stop stories</span></li>
-        <li><span class="step">The insight</span><span class="say">Losses make people think about stopping. Failed payments make them stop.</span></li>
-        <li><span class="step">What I shipped</span><span class="say">SIP Passbook: every instalment tracked like an order, explained by a tested AI</span></li>
+    <div class="frame" aria-labelledby="how-title">
+      <span class="tab" id="how-title">How I work, on one project</span>
+      <ol class="how">
+        <li class="sticky s-yellow tilt-l"><span class="k">1. The question</span><span class="v">Why do first-time investors stop their SIP in year one?</span></li>
+        <li class="sticky s-blue tilt-r"><span class="k">2. The evidence</span><span class="v">1.63M public posts narrowed to 684 stop stories</span></li>
+        <li class="sticky s-pink tilt-r"><span class="k">3. The insight</span><span class="v">Losses make people think about stopping. Failed payments make them stop.</span></li>
+        <li class="sticky s-green tilt-l"><span class="k">4. What I shipped</span><span class="v">SIP Passbook: every instalment tracked like an order</span><span class="stamp" aria-hidden="true">Live</span></li>
       </ol>
-    </aside>
+      <div class="cursor" aria-hidden="true"><svg width="18" height="20" viewBox="0 0 18 20"><path d="M1 1 L16 9 L9 11 L6 18 Z" fill="#F2602F" stroke="#fff" stroke-width="1.5"/></svg><span>Sahil</span></div>
+      <p style="margin:18px 0 0;font-size:15px"><a class="text-link" href="work/groww.html">Read the full Groww case study</a></p>
+    </div>
   </div>
 </section>
 
@@ -62,76 +66,105 @@
       <p>Each one starts with a discovery engine I built to read what users say in public, and ends with a working prototype that tests the fix. Newest first.</p>
     </div>
 
-    <div class="flagships">
+    <div class="stack">
 
-      <article class="flagship" aria-labelledby="f-groww">
-        <div>
-          <p class="company">Groww, first-time mutual fund investors</p>
-          <h3 id="f-groww"><a href="work/groww.html">Why first-year SIPs stop, and a passbook built to keep them going</a></h3>
-          <p class="finding">Losses make new investors think about stopping. Failed payments and unanswered "where is my money" questions are what make them actually stop: payment lapses appear in 35% of stop stories, disappointing returns in 21%.</p>
-          <p class="built">I built <strong>SIP Passbook</strong>, a concept that tracks every instalment like an online order, from bank debit to units allotted. Its AI explainer passed 18 of 20 hand-labelled test questions with no critical errors.</p>
-          <ul class="linkrow">
-            <li class="primary-link"><a href="work/groww.html">Read the case study</a></li>
-            <li><a href="https://sippassbook.vercel.app/">Try the MVP</a></li>
-            <li><a href="https://site-bice-three-88.vercel.app/">Discovery dashboard</a></li>
-            <li><a href="https://github.com/sahildhurat/groww-engine">Code</a></li>
-          </ul>
+      <article class="frame" aria-labelledby="f-groww">
+        <span class="tab">Groww</span>
+        <div class="flagship">
+          <div class="card">
+            <p class="co">First-time mutual fund investors</p>
+            <h3 id="f-groww"><a href="work/groww.html">Why first-year SIPs stop, and a passbook built to keep them going</a></h3>
+            <p>Losses make new investors think about stopping. Failed payments and unanswered "where is my money" questions are what make them actually stop.</p>
+            <p class="built">I built <strong>SIP Passbook</strong>, a concept that tracks every instalment like an online order, from bank debit to units allotted. Its AI explainer passed 18 of 20 hand-labelled test questions with no critical errors.</p>
+            <ul class="chips">
+              <li class="go"><a href="work/groww.html">Read the case study</a></li>
+              <li><a href="https://sippassbook.vercel.app/">Try the MVP</a></li>
+              <li><a href="https://site-bice-three-88.vercel.app/">Discovery dashboard</a></li>
+              <li><a href="https://github.com/sahildhurat/groww-engine">Code</a></li>
+            </ul>
+            <div class="notes2">
+              <div class="sticky s-pink tilt-l"><b>35%</b><span class="v">of stop stories cite a payment lapse</span></div>
+              <div class="sticky s-yellow tilt-r"><b>21%</b><span class="v">cite disappointing returns</span></div>
+            </div>
+          </div>
+          <div class="side">
+            <figure class="card funnel">
+              <figcaption>From public posts to stop stories (bar length on a log scale)</figcaption>
+              <ol>
+                <li style="--w:100%"><span class="bar"></span><span class="row"><span>Public records collected</span><b>1,631,157</b></span></li>
+                <li style="--w:86%"><span class="bar"></span><span class="row"><span>Checked for relevance by AI</span><b>232,395</b></span></li>
+                <li style="--w:80%"><span class="bar"></span><span class="row"><span>Episodes analysed</span><b>90,755</b></span></li>
+                <li style="--w:73%"><span class="bar"></span><span class="row"><span>First-year investor episodes</span><b>32,868</b></span></li>
+                <li style="--w:46%"><span class="bar"></span><span class="row"><span>First-year stop stories</span><b>684</b></span></li>
+              </ol>
+            </figure>
+            <div class="card shot"><img src="assets/img/sip-passbook.png" width="390" height="780" loading="lazy" alt="SIP Passbook screen showing an active SIP and its latest instalment"><p><b>SIP Passbook</b>Each instalment shown from bank debit to units allotted. Demo data.</p></div>
+          </div>
         </div>
-        <figure class="ladder">
-          <figcaption>From public posts to the stories that answer the question (bar length on a log scale)</figcaption>
-          <ol>
-            <li style="--w:100%"><span class="bar"></span><span class="row"><span>Public records collected</span><span class="n">1,631,157</span></span></li>
-            <li style="--w:86%"><span class="bar"></span><span class="row"><span>Checked for relevance by AI</span><span class="n">232,395</span></span></li>
-            <li style="--w:80%"><span class="bar"></span><span class="row"><span>Episodes analysed</span><span class="n">90,755</span></span></li>
-            <li style="--w:73%"><span class="bar"></span><span class="row"><span>First-year investor episodes</span><span class="n">32,868</span></span></li>
-            <li style="--w:46%"><span class="bar"></span><span class="row"><span>First-year stop stories</span><span class="n">684</span></span></li>
-          </ol>
-        </figure>
       </article>
 
-      <article class="flagship" aria-labelledby="f-photos">
-        <div>
-          <p class="company">Google Photos, finding old photos</p>
-          <h3 id="f-photos">Finding the photo you remember but can't describe</h3>
-          <p class="finding">People rarely have the words a search box needs. Across 720 retrieval stories, they most often remembered what was in the photo, roughly when, and who was there. When memory failed, the missing detail was most often the date.</p>
-          <p class="built">I built <strong>The One Where</strong>, an MVP that treats finding a photo as a conversation: it narrows to a few photos for you to recognise, and says when it can't tell two apart instead of guessing.</p>
-          <ul class="linkrow">
-            <li class="soon">Case study and live links coming next</li>
-            <li><a href="https://github.com/sahildhurat/google-photos">Code</a></li>
-          </ul>
+      <article class="frame" aria-labelledby="f-photos">
+        <span class="tab">Google Photos</span>
+        <div class="flagship">
+          <div class="card">
+            <p class="co">Finding old photos</p>
+            <h3 id="f-photos">Finding the photo you remember but can't describe</h3>
+            <p>People rarely have the words a search box needs. Across 720 retrieval stories, they most often remembered what was in the photo, roughly when, and who was there. When memory failed, the missing detail was most often the date.</p>
+            <p class="built">I built <strong>The One Where</strong>, an MVP that treats finding a photo as a conversation: it narrows to a few photos for you to recognise, and says when it can't tell two apart instead of guessing.</p>
+            <ul class="chips">
+              <li class="note">Case study and live links coming next</li>
+              <li><a href="https://github.com/sahildhurat/google-photos">Code</a></li>
+            </ul>
+          </div>
+          <div class="side">
+            <figure class="card funnel">
+              <figcaption>From public posts to analysed stories (bar length on a log scale)</figcaption>
+              <ol>
+                <li style="--w:100%"><span class="bar"></span><span class="row"><span>Public posts collected</span><b>41,006</b></span></li>
+                <li style="--w:84%"><span class="bar"></span><span class="row"><span>Checked for relevance by AI</span><b>7,840</b></span></li>
+                <li style="--w:65%"><span class="bar"></span><span class="row"><span>Judged relevant</span><b>1,015</b></span></li>
+                <li style="--w:62%"><span class="bar"></span><span class="row"><span>Retrieval stories analysed</span><b>720</b></span></li>
+              </ol>
+            </figure>
+            <div class="notes2" style="margin-top:4px">
+              <div class="sticky s-blue tilt-r"><b>720</b><span class="v">stories about hunting for a photo</span></div>
+              <div class="sticky s-violet tilt-l"><b>Recognise</b><span class="v">beats describe: show a few, let people pick</span></div>
+            </div>
+          </div>
         </div>
-        <figure class="ladder">
-          <figcaption>From public posts to analysed stories (bar length on a log scale)</figcaption>
-          <ol>
-            <li style="--w:100%"><span class="bar"></span><span class="row"><span>Public posts collected</span><span class="n">41,006</span></span></li>
-            <li style="--w:84%"><span class="bar"></span><span class="row"><span>Checked for relevance by AI</span><span class="n">7,840</span></span></li>
-            <li style="--w:65%"><span class="bar"></span><span class="row"><span>Judged relevant</span><span class="n">1,015</span></span></li>
-            <li style="--w:62%"><span class="bar"></span><span class="row"><span>Retrieval stories analysed</span><span class="n">720</span></span></li>
-          </ol>
-        </figure>
       </article>
 
-      <article class="flagship" aria-labelledby="f-myntra">
-        <div>
-          <p class="company">Myntra, wishlist to purchase</p>
-          <h3 id="f-myntra">Why saved items don't get bought</h3>
-          <p class="finding">Shoppers save items they like but aren't sure about, then leave Myntra to settle the doubt: comparing prices, checking the item is genuine, asking friends. Value for money was the top friction (257 of 516 high-confidence stories), ahead of fit and size (120).</p>
-          <p class="built">I built <strong>Myntra Match Check</strong>, a prototype that answers "is this right for me?" on a saved item, so the decision can happen inside the app instead of across five tabs.</p>
-          <ul class="linkrow">
-            <li class="soon">Case study coming next</li>
-            <li><a href="https://myntra-match-check-rho.vercel.app/">Try the MVP</a></li>
-            <li><a href="https://github.com/sahildhurat/gradprojectmyntra">Code</a></li>
-          </ul>
+      <article class="frame" aria-labelledby="f-myntra">
+        <span class="tab">Myntra</span>
+        <div class="flagship">
+          <div class="card">
+            <p class="co">Wishlist to purchase</p>
+            <h3 id="f-myntra">Why saved items don't get bought</h3>
+            <p>Shoppers save items they like but aren't sure about, then leave Myntra to settle the doubt: comparing prices, checking the item is genuine, asking friends.</p>
+            <p class="built">I built <strong>Myntra Match Check</strong>, a prototype that answers "is this right for me?" on a saved item, so the decision can happen inside the app instead of across five tabs.</p>
+            <ul class="chips">
+              <li><a href="https://myntra-match-check-rho.vercel.app/">Try the MVP</a></li>
+              <li><a href="https://github.com/sahildhurat/gradprojectmyntra">Code</a></li>
+              <li class="note">Case study coming next</li>
+            </ul>
+            <div class="notes2">
+              <div class="sticky s-yellow tilt-l"><b>257 of 516</b><span class="v">stories are about value for money</span></div>
+              <div class="sticky s-green tilt-r"><b>120</b><span class="v">are about fit and size</span></div>
+            </div>
+          </div>
+          <div class="side">
+            <figure class="card funnel">
+              <figcaption>From reviews and comments to the top friction (bar length on a log scale)</figcaption>
+              <ol>
+                <li style="--w:100%"><span class="bar"></span><span class="row"><span>Reviews and comments collected</span><b>6,985</b></span></li>
+                <li style="--w:77%"><span class="bar"></span><span class="row"><span>About the wishlist</span><b>910</b></span></li>
+                <li style="--w:71%"><span class="bar"></span><span class="row"><span>High-confidence stories</span><b>516</b></span></li>
+                <li style="--w:63%"><span class="bar"></span><span class="row"><span>About value for money</span><b>257</b></span></li>
+              </ol>
+            </figure>
+            <div class="card shot"><img src="assets/img/myntra-match-check.png" width="360" height="800" loading="lazy" alt="Match Check result screen for a saved waistcoat, listing trust checks and reasons it could work"><p><b>Match Check</b>Result screen from the design. Illustrative product data.</p></div>
+          </div>
         </div>
-        <figure class="ladder">
-          <figcaption>From reviews and comments to the top friction (bar length on a log scale)</figcaption>
-          <ol>
-            <li style="--w:100%"><span class="bar"></span><span class="row"><span>Reviews and comments collected</span><span class="n">6,985</span></span></li>
-            <li style="--w:77%"><span class="bar"></span><span class="row"><span>About the wishlist</span><span class="n">910</span></span></li>
-            <li style="--w:71%"><span class="bar"></span><span class="row"><span>High-confidence stories</span><span class="n">516</span></span></li>
-            <li style="--w:63%"><span class="bar"></span><span class="row"><span>About value for money</span><span class="n">257</span></span></li>
-          </ol>
-        </figure>
       </article>
 
     </div>
@@ -144,78 +177,46 @@
       <h2 id="projects-title">Products I've built and shipped</h2>
       <p>Each one is live and was built solo with AI coding tools. The stack matters less than the call that made it work, so that's what's listed here.</p>
     </div>
-    <ul class="index">
-      <li>
-        <div><h3>LuxeTravel AI</h3><p class="kind">Multi-agent travel planner</p></div>
-        <div>
+    <div class="frame">
+      <span class="tab">Projects</span>
+      <div class="grid2">
+        <article class="card item">
+          <h3>LuxeTravel AI</h3><p class="kind">Multi-agent travel planner</p>
           <p class="what">Turns one sentence, typed or spoken, into a checked day-by-day itinerary and a spoken summary.</p>
-          <p class="decision"><b>The call:</b> every fact has exactly one owner. Two agents once produced confident, contradicting prices; the fix was a role change, not a better prompt.</p>
-        </div>
-        <ul class="linkrow">
-          <li><a href="https://mas-murex-one.vercel.app/">Live app</a></li>
-          <li><a href="https://github.com/sahildhurat/MAS">Code</a></li>
-          <li><a href="https://sahildhurat.notion.site/3aadeea52e9d80ab8908f2aad19b8d54">Write-up</a></li>
-        </ul>
-      </li>
-      <li>
-        <div><h3>Weekly Pulse</h3><p class="kind">Weekly app-review summary</p></div>
-        <div>
+          <p class="call"><b>The call:</b> every fact has exactly one owner. Two agents once produced confident, contradicting prices; the fix was a role change, not a better prompt.</p>
+          <ul class="chips"><li><a href="https://mas-murex-one.vercel.app/">Live app</a></li><li><a href="https://github.com/sahildhurat/MAS">Code</a></li><li><a href="https://sahildhurat.notion.site/3aadeea52e9d80ab8908f2aad19b8d54">Write-up</a></li></ul>
+        </article>
+        <article class="card item">
+          <h3>Weekly Pulse</h3><p class="kind">Weekly app-review summary</p>
           <p class="what">Reads a week of App Store and Play Store reviews and sends a one-page pulse: top themes, real user quotes and actions to take.</p>
-          <p class="decision"><b>The call:</b> one fabricated quote would kill trust in the product, so every quote is checked against the original reviews before anything is sent.</p>
-        </div>
-        <ul class="linkrow">
-          <li><a href="https://mcp-server-spd2.vercel.app/">Live app</a></li>
-          <li><a href="https://github.com/sahildhurat/MCP-SERVER">Code</a></li>
-          <li><a href="https://sahildhurat.notion.site/3abdeea52e9d80cbb525e8c50e0fd59c">Write-up</a></li>
-        </ul>
-      </li>
-      <li>
-        <div><h3>FundFacts</h3><p class="kind">Mutual fund FAQ assistant</p></div>
-        <div>
+          <p class="call"><b>The call:</b> one fabricated quote would kill trust in the product, so every quote is checked against the original reviews before anything is sent.</p>
+          <ul class="chips"><li><a href="https://mcp-server-spd2.vercel.app/">Live app</a></li><li><a href="https://github.com/sahildhurat/MCP-SERVER">Code</a></li><li><a href="https://sahildhurat.notion.site/3abdeea52e9d80cbb525e8c50e0fd59c">Write-up</a></li></ul>
+        </article>
+        <article class="card item">
+          <h3>FundFacts</h3><p class="kind">Mutual fund FAQ assistant</p>
           <p class="what">Answers factual questions on 10 Indian mutual fund schemes in three sentences or fewer, each with one source and a data-freshness date.</p>
-          <p class="decision"><b>The call:</b> the refusal list is the spec. No advice, no comparisons, no performance claims, and every answer is retrieved from the right fund's documents only.</p>
-        </div>
-        <ul class="linkrow">
-          <li><a href="https://rag-ecru.vercel.app/">Live app</a></li>
-          <li><a href="https://github.com/sahildhurat/RAG">Code</a></li>
-          <li><a href="https://sahildhurat.notion.site/3abdeea52e9d80a49198fd016742d22f">Write-up</a></li>
-        </ul>
-      </li>
-      <li>
-        <div><h3>TrailSplit</h3><p class="kind">Group trek planner</p></div>
-        <div>
+          <p class="call"><b>The call:</b> the refusal list is the spec. No advice, no comparisons, no performance claims, and answers come from the right fund's documents only.</p>
+          <ul class="chips"><li><a href="https://rag-ecru.vercel.app/">Live app</a></li><li><a href="https://github.com/sahildhurat/RAG">Code</a></li><li><a href="https://sahildhurat.notion.site/3abdeea52e9d80a49198fd016742d22f">Write-up</a></li></ul>
+        </article>
+        <article class="card item">
+          <h3>TrailSplit</h3><p class="kind">Group trek planner</p>
           <p class="what">Treats a trek's gear, carry load and costs as one problem: who carries what, who owes whom, recalculated whenever plans change.</p>
-          <p class="decision"><b>The call:</b> it calculates, but never moves money. "P2 pays P1 ₹450" is where it stops, which kept the build focused on the part no other app does.</p>
-        </div>
-        <ul class="linkrow">
-          <li><a href="https://trek-plan.vercel.app/">Live app</a></li>
-          <li><a href="https://github.com/sahildhurat/TrekPlan">Code</a></li>
-          <li><a href="https://sahildhurat.notion.site/3abdeea52e9d8010b802fc34db06f3ba">Write-up</a></li>
-        </ul>
-      </li>
-      <li>
-        <div><h3>AI News</h3><p class="kind">De-duplicated AI news feed</p></div>
-        <div>
-          <p class="what">Follow the AI topics you care about and see the latest stories once, not five times from five outlets.</p>
-          <p class="decision"><b>The call:</b> the database is the product. News is pulled in the background and read from storage, which is what makes de-duplication and speed possible.</p>
-        </div>
-        <ul class="linkrow">
-          <li><a href="https://ai-newss-theta.vercel.app/">Live app</a></li>
-          <li><a href="https://github.com/sahildhurat/AI-News">Code</a></li>
-          <li><a href="https://sahildhurat.notion.site/38bdeea52e9d806b8851f199622239f2">Write-up</a></li>
-        </ul>
-      </li>
-      <li>
-        <div><h3>Clario and SubSense</h3><p class="kind">Two early fintech builds</p></div>
-        <div>
+          <p class="call"><b>The call:</b> it calculates, but never moves money. "P2 pays P1 ₹450" is where it stops, which kept the build focused on the part no other app does.</p>
+          <ul class="chips"><li><a href="https://trek-plan.vercel.app/">Live app</a></li><li><a href="https://github.com/sahildhurat/TrekPlan">Code</a></li><li><a href="https://sahildhurat.notion.site/3abdeea52e9d8010b802fc34db06f3ba">Write-up</a></li></ul>
+        </article>
+        <article class="card item">
+          <h3>AI News</h3><p class="kind">De-duplicated AI news feed</p>
+          <p class="what">Follow the AI topics you care about and see each story once, not five times from five outlets.</p>
+          <p class="call"><b>The call:</b> the database is the product. News is pulled in the background and read from storage, which is what makes de-duplication and speed possible.</p>
+          <ul class="chips"><li><a href="https://ai-newss-theta.vercel.app/">Live app</a></li><li><a href="https://github.com/sahildhurat/AI-News">Code</a></li><li><a href="https://sahildhurat.notion.site/38bdeea52e9d806b8851f199622239f2">Write-up</a></li></ul>
+        </article>
+        <article class="card item">
+          <h3>Clario and SubSense</h3><p class="kind">Two early fintech builds</p>
           <p class="what">Clario is a personal budget tracker taken from a 17-section spec to a live web app. SubSense tracks subscriptions for Indian users and spots when a phone plan already includes a service you pay for separately.</p>
-        </div>
-        <ul class="linkrow">
-          <li><a href="https://clario-pocket-pal.lovable.app/">Clario</a></li>
-          <li><a href="https://subsense-your-pocket.lovable.app/">SubSense</a></li>
-        </ul>
-      </li>
-    </ul>
+          <ul class="chips"><li><a href="https://clario-pocket-pal.lovable.app/">Clario</a></li><li><a href="https://subsense-your-pocket.lovable.app/">SubSense</a></li></ul>
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -225,110 +226,88 @@
       <h2 id="cases-title">Case studies</h2>
       <p>How I read a business from the outside: what to measure, what went wrong and what I'd do next. Built from public data and filings, and for ChatGPT, my own survey and interviews.</p>
     </div>
-    <ul class="index">
-      <li>
-        <div><h3>Rapido</h3><p class="kind">Metrics and dashboard</p></div>
-        <div>
+    <div class="frame">
+      <span class="tab">Case studies</span>
+      <div class="grid2">
+        <article class="card item">
+          <h3>Rapido</h3><p class="kind">Metrics and dashboard</p>
           <p class="what">Rapido earns two different ways (commission on bikes, subscriptions on autos and cabs), so one GMV number misreads the business.</p>
-          <p class="decision"><b>The call:</b> North Star is weekly fulfilled rides, held honest by contribution per fulfilled ride. When growth doesn't pay, rebalance supply by zone rather than raise the fee.</p>
-        </div>
-        <ul class="linkrow">
-          <li><a href="https://sahildhurat.github.io/Rapido_Dashboard/">Interactive dashboard</a></li>
-          <li><a href="https://drive.google.com/file/d/1CsDw8NSYSGovo_aSEPP8B-euRCRor7dQ/view?usp=sharing">Deck</a></li>
-          <li><a href="https://sahildhurat.notion.site/389deea52e9d80d7b675fb103d9cb6de">Write-up</a></li>
-        </ul>
-      </li>
-      <li>
-        <div><h3>Dunzo</h3><p class="kind">Post-mortem</p></div>
-        <div>
+          <p class="call"><b>The call:</b> North Star is weekly fulfilled rides, kept honest by contribution per fulfilled ride. When growth doesn't pay, rebalance supply by zone rather than raise the fee.</p>
+          <ul class="chips"><li class="go"><a href="https://sahildhurat.github.io/Rapido_Dashboard/">Interactive dashboard</a></li><li><a href="https://drive.google.com/file/d/1CsDw8NSYSGovo_aSEPP8B-euRCRor7dQ/view?usp=sharing">Deck</a></li><li><a href="https://sahildhurat.notion.site/389deea52e9d80d7b675fb103d9cb6de">Write-up</a></li></ul>
+        </article>
+        <article class="card item">
+          <h3>Dunzo</h3><p class="kind">Post-mortem</p>
           <p class="what">Quick commerce was winnable; Blinkit, Zepto and Instamart all scaled. Dunzo specifically lost.</p>
-          <p class="decision"><b>The cause:</b> it left the errands category it created to fight a grocery war as the smallest player, funded by one investor with veto rights, so when the bet failed it could neither raise nor sell.</p>
-        </div>
-        <ul class="linkrow">
-          <li><a href="https://sahildhurat.github.io/DunzoPostMortem/">Interactive dashboard</a></li>
-          <li><a href="https://drive.google.com/file/d/1TZpohYWo9zm0Oq2NqM5EfVXHuOhYOJ4e/view?usp=sharing">Deck</a></li>
-          <li><a href="https://sahildhurat.notion.site/38adeea52e9d80cfb8c1c525fac9520d">Write-up</a></li>
-        </ul>
-      </li>
-      <li>
-        <div><h3>CRED</h3><p class="kind">Product teardown</p></div>
-        <div>
+          <p class="call"><b>The cause:</b> it left the errands category it created to fight a grocery war as the smallest player, funded by one investor with veto rights, so when the bet failed it could neither raise nor sell.</p>
+          <ul class="chips"><li class="go"><a href="https://sahildhurat.github.io/DunzoPostMortem/">Interactive dashboard</a></li><li><a href="https://drive.google.com/file/d/1TZpohYWo9zm0Oq2NqM5EfVXHuOhYOJ4e/view?usp=sharing">Deck</a></li><li><a href="https://sahildhurat.notion.site/38adeea52e9d80cfb8c1c525fac9520d">Write-up</a></li></ul>
+        </article>
+        <article class="card item">
+          <h3>CRED</h3><p class="kind">Product teardown</p>
           <p class="what">A once-a-month product (credit card bills) trying to become a daily super app.</p>
-          <p class="decision"><b>The call:</b> chasing daily use erodes exclusivity, CRED's only lasting moat. Win on timing and value per transaction instead: a calmer home screen, value-first onboarding and a premium UPI play.</p>
-        </div>
-        <ul class="linkrow">
-          <li><a href="https://drive.google.com/file/d/1vigNym51adtElAeXyNW3fnwuIkvLwiT5/view?usp=sharing">Deck</a></li>
-          <li><a href="https://sahildhurat.notion.site/38adeea52e9d803dbc5ec2132424ddb6">Write-up</a></li>
-        </ul>
-      </li>
-      <li>
-        <div><h3>Strava</h3><p class="kind">Monetisation strategy</p></div>
-        <div>
+          <p class="call"><b>The call:</b> chasing daily use erodes exclusivity, CRED's only lasting moat. Win on timing and value per transaction instead: a calmer home screen, value-first onboarding and a premium UPI play.</p>
+          <ul class="chips"><li><a href="https://drive.google.com/file/d/1vigNym51adtElAeXyNW3fnwuIkvLwiT5/view?usp=sharing">Deck</a></li><li><a href="https://sahildhurat.notion.site/38adeea52e9d803dbc5ec2132424ddb6">Write-up</a></li></ul>
+        </article>
+        <article class="card item">
+          <h3>Strava</h3><p class="kind">Monetisation strategy</p>
           <p class="what">180M users, yet an estimated 2–5% pay, and most free users never even reach the paywall.</p>
-          <p class="decision"><b>The call:</b> it's a timing and value-communication failure, not price. Fix the India price, show people their own data first, and offer premium at milestone moments.</p>
-        </div>
-        <ul class="linkrow">
-          <li><a href="https://drive.google.com/file/d/1mhK2jKIDctCnuXhxxfQ_IN7yk5vc2CHE/view?usp=sharing">Deck</a></li>
-          <li><a href="https://sahildhurat.notion.site/38adeea52e9d805e9032f91657711d15">Write-up</a></li>
-        </ul>
-      </li>
-      <li>
-        <div><h3>ChatGPT voice input</h3><p class="kind">Adoption study</p></div>
-        <div>
+          <p class="call"><b>The call:</b> it's a timing and value-communication failure, not price. Fix the India price, show people their own data first, and offer premium at milestone moments.</p>
+          <ul class="chips"><li><a href="https://drive.google.com/file/d/1mhK2jKIDctCnuXhxxfQ_IN7yk5vc2CHE/view?usp=sharing">Deck</a></li><li><a href="https://sahildhurat.notion.site/38adeea52e9d805e9032f91657711d15">Write-up</a></li></ul>
+        </article>
+        <article class="card item wide">
+          <h3>ChatGPT voice input</h3><p class="kind">Adoption study</p>
           <p class="what">89% of students surveyed send WhatsApp voice notes daily, yet only 11% use ChatGPT's voice input weekly. Primary research with a 38-student survey and 6 interviews.</p>
-          <p class="decision"><b>The fix:</b> unbreak the mic entry point, add a preview before sending, and a Student Study Mode that makes voice feel like a study tool.</p>
-        </div>
-        <ul class="linkrow">
-          <li><a href="https://www.figma.com/proto/nqnSDW9rDSXiiJatxFcLrt/ChatGPT?node-id=1-31&amp;p=f&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;starting-point-node-id=1%3A31">Prototype</a></li>
-          <li><a href="https://drive.google.com/file/d/1mVekJ1o_73i878aiSmYrm5hK3ZbXp1-4/view?usp=sharing">Report</a></li>
-          <li><a href="https://drive.google.com/file/d/1Jqcy5GAsfVbZSHHMV6yszLKNnvy1zO1x/view?usp=sharing">Deck</a></li>
-          <li><a href="https://sahildhurat.notion.site/38adeea52e9d80ec9ca1cdf5b2bf98af">Write-up</a></li>
-        </ul>
-      </li>
-    </ul>
+          <p class="call"><b>The fix:</b> unbreak the mic entry point, add a preview before sending, and a Student Study Mode that makes voice feel like a study tool.</p>
+          <ul class="chips"><li class="go"><a href="https://www.figma.com/proto/nqnSDW9rDSXiiJatxFcLrt/ChatGPT?node-id=1-31&amp;p=f&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;starting-point-node-id=1%3A31">Prototype</a></li><li><a href="https://drive.google.com/file/d/1mVekJ1o_73i878aiSmYrm5hK3ZbXp1-4/view?usp=sharing">Report</a></li><li><a href="https://drive.google.com/file/d/1Jqcy5GAsfVbZSHHMV6yszLKNnvy1zO1x/view?usp=sharing">Deck</a></li><li><a href="https://sahildhurat.notion.site/38adeea52e9d80ec9ca1cdf5b2bf98af">Write-up</a></li></ul>
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="section" id="about" aria-labelledby="about-title">
-  <div class="wrap about">
-    <div class="prose">
-      <div class="section-head" style="grid-template-columns:1fr;margin-bottom:20px"><h2 id="about-title">About</h2></div>
-      <p>I came to product through engineering and an MBA in marketing, then owned auto-loan products at Axis Bank: user stories and requirement documents, funnel analysis, and delivery with technology, credit and business teams.</p>
-      <p>I work evidence first. I start from what users actually say, keep every number traceable to its source, and test any AI feature against hand-labelled cases before anyone relies on it. I build my own prototypes with AI coding tools, so ideas get tested on real screens, not just slides.</p>
-      <p>I'm looking for associate product manager and product manager roles in consumer tech, fintech and AI products.</p>
-    </div>
-    <div class="facts">
-      <div>
-        <h3>Experience</h3>
-        <ul>
-          <li><span>Manager, Auto Loan Product, Axis Bank</span><span>2024–25</span></li>
-          <li><span>Functional Analyst (internship), HDFC Bank</span><span></span></li>
-        </ul>
+  <div class="wrap">
+    <div class="section-head"><h2 id="about-title">About me</h2></div>
+    <div class="about">
+      <div class="about-left">
+      <div class="card prose">
+        <p>I came to product through engineering and an MBA in marketing, then owned auto-loan products at Axis Bank: user stories and requirement documents, funnel analysis, and delivery with technology, credit and business teams.</p>
+        <p>I work evidence first. I start from what users actually say, keep every number traceable to its source, and test any AI feature against hand-labelled cases before anyone relies on it. I build my own prototypes with AI coding tools, so ideas get tested on real screens, not just slides.</p>
       </div>
-      <div>
-        <h3>Education</h3>
-        <ul>
-          <li><span>MBA, Marketing, SIMSREE</span><span>2022–24</span></li>
-          <li><span>B.E., Information Technology, RAIT</span><span>2017–21</span></li>
-        </ul>
+      <div class="sticky s-green tilt-l looking"><span class="k">What I'm looking for</span><span class="v">Associate product manager and product manager roles in consumer tech, fintech and AI products. Based in Mumbai.</span></div>
       </div>
-      <div>
-        <h3>Certifications</h3>
-        <ul>
-          <li><span>NextLeap Product Manager Fellowship</span><span>2026</span></li>
-          <li><span>IBM AI Product Manager</span><span>2025</span></li>
-          <li><span>Microsoft AI Product Manager</span><span>2025</span></li>
-          <li><span>Google Project Management</span><span>2025</span></li>
-          <li><span>Microsoft Power BI Data Analyst</span><span>2025</span></li>
-          <li><span>KPMG Lean Six Sigma Green Belt</span><span>2023</span></li>
-          <li><span>Google Data Analytics</span><span>2023</span></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Tools</h3>
-        <ul class="skills">
-          <li>SQL</li><li>Excel</li><li>Power BI</li><li>Figma</li><li>Jira</li><li>Agile</li><li>Canva</li><li>Claude</li><li>Google Antigravity</li><li>Cursor</li><li>Lovable</li>
-        </ul>
+      <div class="card facts">
+        <div>
+          <h3>Experience</h3>
+          <ul>
+            <li><span>Manager, Auto Loan Product, Axis Bank</span><span>2024–25</span></li>
+            <li><span>Functional Analyst (internship), HDFC Bank</span><span></span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Education</h3>
+          <ul>
+            <li><span>MBA, Marketing, SIMSREE</span><span>2022–24</span></li>
+            <li><span>B.E., Information Technology, RAIT</span><span>2017–21</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Certifications</h3>
+          <ul>
+            <li><span>NextLeap Product Manager Fellowship</span><span>2026</span></li>
+            <li><span>IBM AI Product Manager</span><span>2025</span></li>
+            <li><span>Microsoft AI Product Manager</span><span>2025</span></li>
+            <li><span>Google Project Management</span><span>2025</span></li>
+            <li><span>Microsoft Power BI Data Analyst</span><span>2025</span></li>
+            <li><span>KPMG Lean Six Sigma Green Belt</span><span>2023</span></li>
+            <li><span>Google Data Analytics</span><span>2023</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Tools</h3>
+          <ul class="tools">
+            <li>SQL</li><li>Excel</li><li>Power BI</li><li>Figma</li><li>Jira</li><li>Agile</li><li>Canva</li><li>Claude</li><li>Google Antigravity</li><li>Cursor</li><li>Lovable</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -342,11 +321,11 @@
       <p class="contact"><a href="mailto:sahil.dhurat@outlook.com">sahil.dhurat@outlook.com</a></p>
       <p class="disclaimer">Independent work. I'm not affiliated with any company named on this site, and figures in concept prototypes and dashboards are labelled where they're illustrative.</p>
     </div>
-    <ul class="linkrow">
+    <ul class="chips">
       <li><a href="https://www.linkedin.com/in/sahil-dhurat/">LinkedIn</a></li>
       <li><a href="https://github.com/sahildhurat">GitHub</a></li>
       <li><a href="https://nextleap.app/portfolio/sahil-dhurat">NextLeap</a></li>
-      <li><a href="https://drive.google.com/file/d/16mVuV6dT9pFEHMeCt_t-MgY8AIMUmg17/view?usp=sharing">Resume</a></li>
+      <li class="go"><a href="https://drive.google.com/file/d/16mVuV6dT9pFEHMeCt_t-MgY8AIMUmg17/view?usp=sharing">Resume</a></li>
     </ul>
   </div>
 </footer>
