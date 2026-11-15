@@ -184,9 +184,19 @@ h1, h2, h3, h4 { margin: 0; text-wrap: balance; }
 .item .chips { margin-top: auto; }
 
 /* About */
-.about { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 18px; align-items: start; }
-.about-left { display: grid; gap: 26px; }
-.looking { max-width: 420px; margin-left: 12px; }
+/* Row 1: photo, story, what I'm looking for. Row 2: the facts as one strip */
+.about { display: grid; grid-template-columns: 236px minmax(0, 1fr) minmax(0, 300px); gap: 26px; align-items: start; }
+.about .facts { grid-column: 1 / -1; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-areas: "exp cert tools" "edu cert tools"; grid-template-rows: auto 1fr; gap: 18px 44px; align-items: start; }
+.about .facts > :nth-child(1) { grid-area: exp; }
+.about .facts > :nth-child(2) { grid-area: edu; }
+.about .facts > :nth-child(3) { grid-area: cert; }
+.about .facts > :nth-child(4) { grid-area: tools; }
+/* A printed photo taped to the board */
+.polaroid { margin: 10px 0 0 6px; background: #fff; padding: 10px 10px 12px; border-radius: 3px; box-shadow: 0 0 0 1px rgba(30, 36, 51, 0.07), var(--sticky-shadow); transform: rotate(-2.2deg); position: relative; }
+.polaroid::before { content: ""; position: absolute; top: -11px; left: 50%; width: 86px; height: 24px; transform: translateX(-50%) rotate(3deg); background: rgba(255, 228, 138, 0.82); box-shadow: 0 1px 2px rgba(30, 36, 51, 0.1); }
+.polaroid img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 2px; }
+.polaroid figcaption { font: 400 23px/1.1 var(--marker); color: var(--sticky-ink); text-align: center; margin-top: 10px; }
+.looking { margin-top: 14px; }
 .looking .v { font-size: 22px; }
 .about .prose p { max-width: 38em; }
 .about .prose p:last-child { margin-bottom: 0; }
@@ -270,7 +280,10 @@ h1, h2, h3, h4 { margin: 0; text-wrap: balance; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1000px) {
-  .hero .wrap, .case-hero .wrap, .section-head, .flagship, .about, .summary { grid-template-columns: minmax(0, 1fr); }
+  .hero .wrap, .case-hero .wrap, .section-head, .flagship, .summary { grid-template-columns: minmax(0, 1fr); }
+  .about { grid-template-columns: 210px minmax(0, 1fr); }
+  .looking { grid-column: 2; margin-top: 0; max-width: 460px; }
+  .about .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-areas: "exp cert" "edu cert" "tools tools"; grid-template-rows: auto 1fr auto; gap: 18px 32px; }
   .chapter { grid-template-columns: minmax(0, 1fr); }
   .chapter > h2 { position: static; }
   .cursor { right: 4px; }
@@ -296,7 +309,10 @@ h1, h2, h3, h4 { margin: 0; text-wrap: balance; }
   .phone { width: min(240px, 100%); }
   .frame { padding: 34px 10px 12px; border-radius: 16px; }
   .card { padding: 16px; }
-  .looking { margin-left: 6px; }
+  .about { grid-template-columns: minmax(0, 1fr); }
+  .looking { grid-column: auto; margin-left: 6px; }
+  .about .facts { grid-template-columns: minmax(0, 1fr); grid-template-areas: "exp" "edu" "cert" "tools"; grid-template-rows: none; }
+  .polaroid { width: 210px; margin: 12px 0 4px 10px; }
 }
 @media print {
   .toolbar, .btns, .skip, .cursor { display: none; }
