@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Theme options — Sahil Dhurat</title>
+<meta name="robots" content="noindex">
+<style>
+:root { --bg: #F4F6F9; --ink: #142038; --soft: #56627A; --line: #D8DEE8; --card: #fff; --link: #94570A; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #0E182C; --ink: #E6EBF3; --soft: #9AA6BC; --line: #26344F; --card: #15223A; --link: #F2B552; } }
+:root[data-theme="dark"] { --bg: #0E182C; --ink: #E6EBF3; --soft: #9AA6BC; --line: #26344F; --card: #15223A; --link: #F2B552; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+main { max-width: 760px; margin: 0 auto; padding: 32px 16px 56px; }
+h1 { font-size: 28px; line-height: 1.2; margin: 0 0 8px; }
+p.lede { color: var(--soft); margin: 0 0 24px; }
+ol { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+li a { display: block; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; text-decoration: none; color: inherit; }
+li a:hover { border-color: var(--ink); }
+li b { display: block; font-size: 18px; }
+li span { color: var(--soft); font-size: 15px; }
+li em { color: var(--link); font-style: normal; font-size: 14px; font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Theme options</h1>
+  <p class="lede">Same content in each: the top of the home page and the Groww card. Pick a look first; details come later.</p>
+  <ol>
+    <li><a href="a-blueprint.html"><b>A. Blueprint</b><span>An engineering drawing: grid paper, line work, a title block. Precise and technical.</span></a></li>
+    <li><a href="b-notebook.html"><b>B. Research notebook</b><span>Dot-grid paper, handwritten notes, index cards, a taped screenshot. Human and research-led.</span></a></li>
+    <li><a href="c-journey.html"><b>C. Journey map</b><span>Each project is a metro line from user problem to shipped product. Bold and colourful.</span></a></li>
+    <li><a href="d-console.html"><b>D. Control room</b><span>A product console: terminal log, metric tiles, data bars. Dark and data-led.</span></a></li>
+    <li><a href="../"><b>Current: Clean spec</b><span>The light, quiet version you've already seen.</span> <em>For comparison</em></a></li>
+  </ol>
+</main>
+</body>
+</html>
