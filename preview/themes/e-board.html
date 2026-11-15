@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Theme E: Workshop board — Sahil Dhurat</title>
+<meta name="robots" content="noindex">
+<style>
+@font-face { font-family: "Bricolage"; src: url("fonts/bricolage-grotesque-latin-opsz-normal.woff2") format("woff2"); font-weight: 200 800; font-display: swap; }
+@font-face { font-family: "Figtree"; src: url("fonts/figtree-latin-wght-normal.woff2") format("woff2"); font-weight: 300 900; font-display: swap; }
+@font-face { font-family: "Marker"; src: url("fonts/patrick-hand-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Rupee"; src: url("fonts/dm-sans-latin-ext-opsz-normal.woff2") format("woff2"); unicode-range: U+20B9; }
+:root { --canvas: #F2F3F5; --dot: #CDD2DA; --ink: #1E2433; --soft: #5E6678; --frame: #FFFFFF; --frame-line: #DADEE5;
+  --yellow: #FFE48A; --pink: #FFC9D9; --green: #C3EDCD; --blue: #C6E0FF; --violet: #DCD0FF; --accent: #3D5AFE; --cursor: #FF6B3D;
+  --head: "Rupee", "Bricolage", system-ui, sans-serif; --sans: "Rupee", "Figtree", system-ui, sans-serif; --marker: "Rupee", "Marker", "Segoe Print", cursive; }
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); font: 17px/1.6 var(--sans); background: var(--canvas);
+  background-image: radial-gradient(var(--dot) 1px, transparent 1.2px); background-size: 20px 20px; }
+a { color: inherit; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px); }
+.toolbar { position: sticky; top: 0; z-index: 5; background: rgba(255,255,255,.92); backdrop-filter: blur(6px); border-bottom: 1px solid var(--frame-line); }
+.toolbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 10px; padding-bottom: 10px; flex-wrap: wrap; }
+.mark { display: flex; align-items: center; gap: 10px; font: 700 17px var(--sans); text-decoration: none; }
+.mark i { width: 28px; height: 28px; border-radius: 8px; background: var(--yellow); display: grid; place-items: center; font: 400 17px var(--marker); font-style: normal; transform: rotate(-4deg); box-shadow: 0 1px 2px rgba(0,0,0,.15); }
+nav { display: flex; gap: 4px; flex-wrap: wrap; align-items: center; }
+nav a { text-decoration: none; font-weight: 600; font-size: 15px; padding: 6px 11px; border-radius: 8px; color: var(--soft); }
+nav a:hover { background: var(--canvas); color: var(--ink); }
+nav a.res { background: var(--accent); color: #fff; }
+.hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 40px; padding: 48px 0 40px; align-items: center; }
+h1 { font: 700 clamp(40px, 5.4vw, 64px)/1.04 var(--head); letter-spacing: -.02em; margin: 0 0 20px; text-wrap: balance; font-variation-settings: "opsz" 96; }
+.lede { color: var(--soft); max-width: 32em; margin: 0 0 24px; }
+.btns { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { font: 700 15px var(--sans); text-decoration: none; padding: 11px 16px; border-radius: 10px; background: #fff; border: 1px solid var(--frame-line); box-shadow: 0 1px 2px rgba(30,36,51,.08); }
+.btn.primary { background: var(--ink); color: #fff; border-color: var(--ink); }
+.frame { background: var(--frame); border: 1px solid var(--frame-line); border-radius: 16px; padding: 38px 22px 22px; position: relative; box-shadow: 0 10px 30px -18px rgba(30,36,51,.35); }
+.frame > .tab { position: absolute; top: -13px; left: 18px; font: 700 13px var(--sans); background: var(--ink); color: #fff; padding: 4px 10px; border-radius: 7px; }
+.stickies { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 34px; position: relative; }
+.sticky { padding: 12px 14px 16px; min-height: 128px; box-shadow: 0 1px 1px rgba(0,0,0,.06), 0 8px 14px -8px rgba(30,36,51,.35); position: relative; }
+.sticky .k { display: block; font: 700 12px var(--sans); color: rgba(30,36,51,.6); margin-bottom: 4px; }
+.sticky .v { font: 400 21px/1.2 var(--marker); }
+.sticky:nth-child(1) { background: var(--yellow); transform: rotate(-1.5deg); }
+.sticky:nth-child(2) { background: var(--blue); transform: rotate(1deg); }
+.sticky:nth-child(3) { background: var(--pink); transform: rotate(.8deg); }
+.sticky:nth-child(4) { background: var(--green); transform: rotate(-1deg); }
+.sticky:nth-child(1)::after, .sticky:nth-child(3)::after { content: ""; position: absolute; right: -30px; top: 50%; width: 24px; height: 2px; background: var(--ink); }
+.sticky:nth-child(1)::before, .sticky:nth-child(3)::before { content: ""; position: absolute; right: -32px; top: calc(50% - 4px); border-left: 8px solid var(--ink); border-top: 5px solid transparent; border-bottom: 5px solid transparent; }
+.stamp { position: absolute; right: -10px; bottom: -12px; width: 42px; height: 42px; border-radius: 50%; background: #fff; border: 2px solid var(--ink); display: grid; place-items: center; font: 800 12px var(--sans); transform: rotate(-12deg); }
+.cursor { position: absolute; right: -6px; top: 52%; display: flex; align-items: flex-start; gap: 2px; pointer-events: none; }
+.cursor span { background: var(--cursor); color: #fff; font: 700 12px var(--sans); padding: 3px 8px; border-radius: 4px 10px 10px 10px; margin-top: 14px; }
+.section { padding: 40px 0 64px; }
+.section h2 { font: 700 36px/1.1 var(--head); letter-spacing: -.02em; margin: 0 0 26px; }
+.board { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 26px; }
+.card { background: #fff; border: 1px solid var(--frame-line); border-radius: 12px; padding: 20px 22px; }
+.card .co { font: 700 13px var(--sans); color: var(--soft); margin: 0 0 6px; }
+.card h3 { font: 700 28px/1.14 var(--head); letter-spacing: -.015em; margin: 0 0 14px; text-wrap: balance; }
+.card p { margin: 0 0 14px; }
+.card .built { color: var(--soft); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
+.chips a { display: inline-block; font: 700 14px var(--sans); text-decoration: none; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--frame-line); background: var(--canvas); }
+.chips li:first-child a { background: var(--accent); border-color: var(--accent); color: #fff; }
+.mini-stickies { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 16px 0 0; }
+.mini-stickies div { padding: 10px 12px; font: 400 19px/1.2 var(--marker); box-shadow: 0 6px 12px -8px rgba(30,36,51,.4); }
+.mini-stickies b { display: block; font: 800 26px var(--head); letter-spacing: -.02em; }
+.side { display: grid; gap: 22px; align-content: start; }
+.widget figcaption { font: 700 13px var(--sans); color: var(--soft); margin-bottom: 12px; }
+.widget ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.widget .bar { display: block; height: 10px; border-radius: 6px; background: #E6E9EF; width: var(--w); }
+.widget li:last-child .bar { background: var(--accent); }
+.widget .row { display: flex; justify-content: space-between; font-size: 14px; color: var(--soft); }
+.widget .row b { color: var(--ink); font-variant-numeric: tabular-nums; }
+.shot { background: #fff; border: 1px solid var(--frame-line); border-radius: 12px; padding: 10px; display: flex; gap: 14px; align-items: center; }
+.shot img { width: 130px; height: 190px; object-fit: cover; object-position: top; border-radius: 8px; border: 1px solid var(--frame-line); }
+.shot p { margin: 0; font-size: 14px; color: var(--soft); }
+.shot p b { display: block; color: var(--ink); font-size: 15px; }
+@media (max-width: 900px) { .hero, .board { grid-template-columns: minmax(0, 1fr); } .cursor { display: none; } }
+@media (max-width: 520px) { .stickies { grid-template-columns: minmax(0, 1fr); gap: 16px; } .sticky { min-height: 0; } .sticky::before, .sticky::after { display: none; } nav a { padding: 6px 8px; font-size: 14px; } .frame { padding: 34px 16px 18px; } }
+</style>
+</head>
+<body>
+<div class="toolbar"><div class="wrap"><a class="mark" href="#"><i>S</i>Sahil Dhurat</a><nav><a href="#">Work</a><a href="#">Projects</a><a href="#">Case studies</a><a href="#">About</a><a class="res" href="#">Resume</a></nav></div></div>
+<div class="wrap">
+<section class="hero">
+  <div>
+    <h1>I find out why users drop off, then build the fix.</h1>
+    <p class="lede">I'm a product manager. I owned auto-loan products at Axis Bank, and I bring an engineering degree and an MBA in marketing. Now I build end to end: discovery research over large sets of public user data, live MVPs with tested AI, and metric systems for marketplaces.</p>
+    <div class="btns"><a class="btn primary" href="#">See the work</a><a class="btn" href="#">Resume</a><a class="btn" href="#">LinkedIn</a><a class="btn" href="#">Email</a></div>
+  </div>
+  <div class="frame">
+    <span class="tab">How I work, on one project</span>
+    <ol class="stickies">
+      <li class="sticky"><span class="k">1. Question</span><span class="v">Why do first-time investors stop their SIP in year one?</span></li>
+      <li class="sticky"><span class="k">2. Evidence</span><span class="v">1.63M public posts narrowed to 684 stop stories</span></li>
+      <li class="sticky"><span class="k">3. Insight</span><span class="v">Losses make people think about stopping. Failed payments make them stop.</span></li>
+      <li class="sticky"><span class="k">4. Shipped</span><span class="v">SIP Passbook: every instalment tracked like an order</span><span class="stamp" aria-label="Shipped">Live</span></li>
+    </ol>
+    <div class="cursor" aria-hidden="true"><svg width="18" height="20" viewBox="0 0 18 20"><path d="M1 1 L16 9 L9 11 L6 18 Z" fill="#FF6B3D" stroke="#fff" stroke-width="1.5"/></svg><span>Sahil</span></div>
+  </div>
+</section>
+<section class="section">
+  <h2>Three products, research to MVP</h2>
+  <div class="board">
+    <article class="card">
+      <p class="co">Groww, first-time mutual fund investors</p>
+      <h3>Why first-year SIPs stop, and a passbook built to keep them going</h3>
+      <p>Losses make new investors think about stopping. Failed payments and unanswered "where is my money" questions are what make them actually stop.</p>
+      <p class="built">I built SIP Passbook, which tracks every instalment like an online order. Its AI explainer passed 18 of 20 hand-labelled test questions with no critical errors.</p>
+      <ul class="chips"><li><a href="#">Read the case study</a></li><li><a href="#">Try the MVP</a></li><li><a href="#">Dashboard</a></li><li><a href="#">Code</a></li></ul>
+      <div class="mini-stickies">
+        <div style="background:var(--pink);transform:rotate(-1deg)"><b>35%</b>of stop stories cite a payment lapse</div>
+        <div style="background:var(--yellow);transform:rotate(1.2deg)"><b>21%</b>cite disappointing returns</div>
+      </div>
+    </article>
+    <div class="side">
+      <figure class="card widget" style="margin:0">
+        <figcaption>From public posts to stop stories (log scale)</figcaption>
+        <ol>
+          <li><span class="bar" style="--w:100%"></span><span class="row"><span>Public records</span><b>1,631,157</b></span></li>
+          <li><span class="bar" style="--w:86%"></span><span class="row"><span>Checked by AI</span><b>232,395</b></span></li>
+          <li><span class="bar" style="--w:80%"></span><span class="row"><span>Episodes analysed</span><b>90,755</b></span></li>
+          <li><span class="bar" style="--w:73%"></span><span class="row"><span>First-year episodes</span><b>32,868</b></span></li>
+          <li><span class="bar" style="--w:46%"></span><span class="row"><span>Stop stories</span><b>684</b></span></li>
+        </ol>
+      </figure>
+      <div class="shot"><img src="img/sip-passbook.png" alt="SIP Passbook screen"><p><b>SIP Passbook</b>Each instalment from bank debit to units allotted. Demo data.</p></div>
+    </div>
+  </div>
+</section>
+</div>
+</body>
+</html>
